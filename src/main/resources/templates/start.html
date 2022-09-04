@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html  xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <title>Welcome in Weather Forecast application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Input product to see nutritions:</h1>
+
+<form action="#" th:action="@{/start}" th:object="${input}" method="post">
+
+    <p>Input city to get the weahter: <input type="text" th:field="*{name}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+
+</form>
+
+<td>See nutritions</td>
+<br>
+<td th:text="${result}"/>
+</td>
+
+</form>
+</body>
+</html>

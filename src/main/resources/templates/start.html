@@ -9,15 +9,49 @@
 
 <form action="#" th:action="@{/start}" th:object="${input}" method="post">
 
-    <p>Input city to get the weahter: <input type="text" th:field="*{name}" /></p>
+    <p>Input food to see nutritions: <input type="text" th:field="*{name}" /></p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 
 </form>
 
 <td>See nutritions</td>
 <br>
-<td th:text="${result}"/>
-</td>
+
+<table>
+    <tr th:each="element : ${result}">
+        <td th:text="${element.key}">keyvalue</td>
+        <td th:text="${element.value}">keyvalue</td>
+        <table>
+<!--            <tr th:each="anews : ${element.value}">-->
+<!--                <td th:text="${anews.name}">Some name</td>-->
+<!--                <td th:text="${anews.description}">Some name</td>-->
+<!--                <td th:text="${anews.url}">Some name</td>-->
+<!--                <td th:text="${anews.logo}">Some name</td>-->
+<!--                <td th:text="${anews.collectionDate}">Some name</td>-->
+            </tr>
+        </table>
+    </tr>
+</table>
+
+<!--<table>-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th> Title</th>-->
+<!--        <th> Author</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr th:each="instance : ${analysis.instanceMap}">-->
+<!--        <td th:text="${instance.key}">keyvalue</td>-->
+<!--        <td th:text="${instance.value.numOfData}">num</td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
+
+<!--<td th:text="${serving}"/>-->
+<!--</td>-->
+<!--<td th:text="${name}"/>-->
+<!--</td>-->
 
 </form>
 </body>

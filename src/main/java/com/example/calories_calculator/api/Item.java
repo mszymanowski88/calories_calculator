@@ -185,20 +185,42 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
-                "sugarG=" + sugarG +
-                ", fiberG=" + fiberG +
-                ", servingSizeG=" + servingSizeG +
-                ", sodiumMg=" + sodiumMg +
+        return  servingSizeG + "[g] of " +
                 ", name='" + name + '\'' +
-                ", potassiumMg=" + potassiumMg +
+                "contains " +
+                ", calories=" + calories +
+                "sugar [g]= " + sugarG +
+                "fibe [g] =" + fiberG +
+
+//                "sodium [Mg]=" + sodiumMg +
+//
+//                ", potassiumMg=" + potassiumMg +
                 ", fatSaturatedG=" + fatSaturatedG +
                 ", fatTotalG=" + fatTotalG +
-                ", calories=" + calories +
+
                 ", cholesterolMg=" + cholesterolMg +
                 ", proteinG=" + proteinG +
                 ", carbohydratesTotalG=" + carbohydratesTotalG +
-                ", additionalProperties=" + additionalProperties +
+                ", additionalProperties ??=" + additionalProperties.get("FiberG") +
                 '}';
     }
+
+//    @Override
+//    public String toString() {
+//        return "Item{" +
+//                "sugarG=" + sugarG +
+//                ", fiberG=" + fiberG +
+//                ", servingSizeG=" + servingSizeG +
+//                ", sodiumMg=" + sodiumMg +
+//                ", name='" + name + '\'' +
+//                ", potassiumMg=" + potassiumMg +
+//                ", fatSaturatedG=" + fatSaturatedG +
+//                ", fatTotalG=" + fatTotalG +
+//                ", calories=" + calories +
+//                ", cholesterolMg=" + cholesterolMg +
+//                ", proteinG=" + proteinG +
+//                ", carbohydratesTotalG=" + carbohydratesTotalG +
+//                ", additionalProperties=" + additionalProperties +
+//                '}';
+//    }
 }

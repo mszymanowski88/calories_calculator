@@ -3,25 +3,85 @@
 <head>
     <title>Welcome in Weather Forecast application</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Title</title>
+    <style>
+        table {
+            table-layout: fixed ;
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+
+
+        . tablepress-id-N . row-X td background-color: #ff0000;
+            color: #00ff00;
+
+
+        /*tr:nth-child(even) {*/
+        /*    background-color:  #00ff00;*/
+        /*}*/
+        /*tr:nth-child(even) {*/
+        /*    background-color: #dddddd;*/
+        /*}*/
+
+        }
+
+        tbody > :nth-child(1) {
+            background: red;
+        }
+
+    </style>
 </head>
 <body>
-<h1>Input product to see nutritions:</h1>
+<h1>Input product to see nutrition facts:</h1>
 
-<form action="#" th:action="@{/start}" th:object="${input}" method="post">
+<form action="#" th:action="@{/start}" th:object="${input}" method="post" th:autocomplete="off"  >
 
-    <p>Input food to see nutritions: <input type="text" th:field="*{name}" /></p>
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    <p>Input product: <input type="text" th:field="*{name}"  th:autocomplete="off" /></p>
+    <p><input type="submit" value="Submit"  th:autocomplete="off"  />
+        <input type="reset" value="Reset form" />
+
+
+    </p>
+
+
+
 
 </form>
 
-<td>See nutritions</td>
+<td>Nutrition Facts</td>
 <br>
 
+<!--<table>-->
+<!--    <tr th:each="element : ${result}">-->
+<!--        <td th:text="${element.key}">keyvalue</td>-->
+<!--        <table>-->
+<!--            <tr th:each="anews : ${element.value}">-->
+<!--                <td th:text="${anews.name}">"Name: "</td>-->
+<!--&lt;!&ndash;                <td th:text="${anews.description}">Some name</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td th:text="${anews.url}">Some name</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td th:text="${anews.logo}">Some name</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td th:text="${anews.collectionDate}">Some name</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            </tr>&ndash;&gt;-->
+<!--        </table>-->
+<!--    </tr>-->
+<!--</table>-->
+
 <table>
+
     <tr th:each="element : ${result}">
+
         <td th:text="${element.key}">keyvalue</td>
         <td th:text="${element.value}">keyvalue</td>
+
         <table>
+
 <!--            <tr th:each="anews : ${element.value}">-->
 <!--                <td th:text="${anews.name}">Some name</td>-->
 <!--                <td th:text="${anews.description}">Some name</td>-->
@@ -29,10 +89,44 @@
 <!--                <td th:text="${anews.logo}">Some name</td>-->
 <!--                <td th:text="${anews.collectionDate}">Some name</td>-->
             </tr>
+
         </table>
     </tr>
 </table>
 
+
+<table style="width:100%">
+    <tr>
+        <th>Company</th>
+        <th>Contact</th>
+
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+
+    </tr>
+    <tr>
+        <td>2</td>
+
+    </tr>
+    <tr>
+        <td>3</td>
+
+    </tr>
+    <tr>
+        <td>4</td>
+
+    </tr>
+    <tr>
+        <td>5</td>
+
+    </tr>
+    <tr>
+        <td>6</td>
+
+    </tr>
+</table>
 <!--<table>-->
 <!--    <thead>-->
 <!--    <tr>-->

@@ -1,4 +1,3 @@
-
 package com.example.calories_calculator.api;
 
 import com.fasterxml.jackson.annotation.*;
@@ -10,7 +9,7 @@ import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "items"
+        "items"
 })
 @Generated("jsonschema2pojo")
 public class Product {
@@ -19,7 +18,6 @@ public class Product {
     private List<Item> items = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
 
 
     @JsonProperty("items")
@@ -41,7 +39,6 @@ public class Product {
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
     }
-
 
 
 }

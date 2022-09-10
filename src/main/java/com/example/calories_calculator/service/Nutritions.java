@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 
 @Service
-public class Nutritions {
+public class Nutritions implements NutritionsInterface{
 
     private final String url = "https://api.calorieninjas.com/v1/nutrition?query=";
     public LinkedHashMap<String, Object> getNutritions(String input) {
@@ -42,16 +42,15 @@ public class Nutritions {
         if (response.getStatusCode() == HttpStatus.OK) {
 
 
-
-
         } else {
 
             System.out.println(response.getStatusCode());
         }
 
-        LinkedHashMap<String, Object> result = new LinkedHashMap<>();
+        LinkedHashMap< String,Object> result = new LinkedHashMap<>();
 
-        result.put("Name: ", response.getBody().getItems().get(0).getName());
+
+        result.put("Name:", response.getBody().getItems().get(0).getName());
         result.put("Serving Size [G]: ", response.getBody().getItems().get(0).getServingSizeG());
         result.put("Calories:", response.getBody().getItems().get(0).getCalories());
         result.put("Fat Total [G]", response.getBody().getItems().get(0).getFatTotalG());
@@ -59,7 +58,7 @@ public class Nutritions {
         result.put("Sodium [Mg]", response.getBody().getItems().get(0).getSodiumMg());
         result.put("Carbohydrates Total [G]", response.getBody().getItems().get(0).getCarbohydratesTotalG());
         result.put("Protein [G]", response.getBody().getItems().get(0).getProteinG());
-//        System.out.println("mapr " + result.get("name"));
+
 
         return result;
 

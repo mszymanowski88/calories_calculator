@@ -57,7 +57,7 @@ public class Nutritions implements NutritionsInterface {
 
     public double getcaloriesPerServing(String input, double portion) {
 
-        return (double) getNutritions(input).get("Calories:") * (portion / 100);
+        return Math.round((double) getNutritions(input).get("Calories:") * (portion / 100));
     }
 
 
@@ -68,7 +68,7 @@ public class Nutritions implements NutritionsInterface {
             sum += (double) getNutritions(input).get("Calories:")* (portion / 100);
         }
 
-        return sum;
+        return Math.round(sum);
     }
 
 

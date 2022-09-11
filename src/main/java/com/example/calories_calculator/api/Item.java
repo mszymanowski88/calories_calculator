@@ -1,3 +1,4 @@
+
 package com.example.calories_calculator.api;
 
 import com.fasterxml.jackson.annotation.*;
@@ -8,19 +9,20 @@ import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "sugar_g",
-        "fiber_g",
-        "serving_size_g",
-        "sodium_mg",
-        "name",
-        "potassium_mg",
-        "fat_saturated_g",
-        "fat_total_g",
-        "calories",
-        "cholesterol_mg",
-        "protein_g",
-        "carbohydrates_total_g"
+    "sugar_g",
+    "fiber_g",
+    "serving_size_g",
+    "sodium_mg",
+    "name",
+    "potassium_mg",
+    "fat_saturated_g",
+    "fat_total_g",
+    "calories",
+    "cholesterol_mg",
+    "protein_g",
+    "carbohydrates_total_g"
 })
+
 @Generated("jsonschema2pojo")
 public class Item {
 
@@ -50,6 +52,16 @@ public class Item {
     private Double carbohydratesTotalG;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    double portion;
+
+    public double getPortion() {
+        return portion;
+    }
+
+    public void setPortion(double portion) {
+        this.portion = portion;
+    }
 
     @JsonProperty("sugar_g")
     public Double getSugarG() {
@@ -180,6 +192,7 @@ public class Item {
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
     }
+
 
 
     @Override

@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.HttpClientErrorException;
 
+import java.text.DecimalFormat;
+
 @Controller
 public class CaloriesCalcController {
 
     private Nutritions  nutritions;
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     @Autowired
     public CaloriesCalcController(Nutritions nutritions) {
@@ -30,12 +33,17 @@ public class CaloriesCalcController {
     @PostMapping("/start")
     public String getCityWeatherByInput(@ModelAttribute Item item, Model model) throws HttpClientErrorException {
 
+
+
         model.addAttribute("input", item);
         model.addAttribute("result", nutritions.getNutritions(item.getName()));
+//        model.addAttribute("portion", Math.round((double)nutritions.getNutritions(item.getName()).get("Calories:")*(item.getPortion()/100)));
+        model.addAttribute("portion", nutritions.getcaloriesPerServing(item.getName(), item.getPortion()));
+
+        System.out.println(Math.round((double)nutritions.getNutritions(item.getName()).get("Calories:")*(item.getPortion()/100)));
+
         return "start";
     }
-
-
 
 
 }

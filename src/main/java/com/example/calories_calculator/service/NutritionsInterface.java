@@ -4,6 +4,6 @@ import java.util.LinkedHashMap;
 
 public interface NutritionsInterface {
 
-    public LinkedHashMap<String, Object> getNutritions(String input);
-
+    LinkedHashMap<String, Object> getNutritions(String input);
+    double getcaloriesPerServing(String input, double portion);
 }

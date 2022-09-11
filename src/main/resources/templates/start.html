@@ -40,10 +40,9 @@
 
 <form action="#" th:action="@{/start}" th:object="${input}" method="post">
 
-    <p>Input product: <input type="text" th:field="*{name}" th:onclick="showMessage()" /></p>
-<!--    <p><input  type="submit" value="Submit"/>-->
+    <p>Input product: <input type="text" th:field="*{name}" th:onclick="showMessage()"/></p>
     <p>Input portion: <input type="text" th:field="*{portion} "/></p>
-    <p><input  type="submit" value="Submit"/>
+    <p><input type="submit" value="Submit"/>
 
 
         <input type="reset" value="Reset"/>

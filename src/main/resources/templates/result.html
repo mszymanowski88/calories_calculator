@@ -1,10 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <title>Nutiritinons Facts App </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Nutiritinons Facts</title>
+  <style>
+    p {
+      font-family: Arial;
+    }
+
+    table {
+      table-layout: fixed;
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 50%;
+
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+
+
+    . tablepress-id-N . row-X td background-color: #ff0000;
+      color: #000000;
+
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+
+  </style>
 </head>
 <body>
+
+<h1>Input product to see nutrition facts: </h1>
+<tr th:object="${input}">
+
+
+
+<p  th:text="${input.name} + ' contains ' + ${input.portion} + ' calories per ' + ${portion} + ' grams.'  " />
+
+
+<br>
+
+<table>
+  <tr th:each="element : ${result}">
+
+    <td th:text="${element.key}">keyvalue</td>
+    <td th:text="${element.value}">keyvalue</td>
+
+    <table>
+
+      </tr>
+
+    </table>
+  </tr>
+</table>
+
+<button onclick="goBack()">Go Back</button>
+
+
+<script>
+  function goBack() {
+    window.history.back();
+  }
+</script>
 
 </body>
 </html>

@@ -40,11 +40,12 @@
 <tr th:object="${input}">
 
 
-    <p th:text="${input.name} + ' contains ' + ${input.portion} + ' calories per ' + ${portion} + ' grams.'  "/>
+    <p th:text="${input.name} + ' contains ' + ${portion} +  ' calories per ' + ${input.portion} + ' grams.' "/>
+    <p th:text="'In total your meal has '+ ${total} + ' calories. ' "/>
 
 
     <br>
-
+    <p th:text="'Nutrition Facts about this product:' "/>
     <table>
         <tr th:each="element : ${result}">
 

@@ -13,12 +13,13 @@ import org.springframework.web.client.HttpClientErrorException;
 @Controller
 public class CaloriesCalcController {
 
-    private Nutritions nutritions;
-
+    private final Nutritions nutritions;
 
     @Autowired
     public CaloriesCalcController(Nutritions nutritions) {
+
         this.nutritions = nutritions;
+
     }
 
     @GetMapping("/start")
@@ -42,10 +43,10 @@ public class CaloriesCalcController {
     @PostMapping("/start")
     public String getCityWeatherByInput(@ModelAttribute Item item, Model model) throws HttpClientErrorException {
 
-
         model.addAttribute("input", item);
         model.addAttribute("result", nutritions.getNutritions(item.getName()));
         model.addAttribute("portion", nutritions.getcaloriesPerServing(item.getName(), item.getPortion()));
+        model.addAttribute("total", nutritions.getcaloriesPerServingTotal(item.getName(), item.getPortion()));
 
         return "result";
     }

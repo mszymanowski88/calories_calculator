@@ -6,4 +6,5 @@ public interface NutritionsInterface {
 
     LinkedHashMap<String, Object> getNutritions(String input);
     double getcaloriesPerServing(String input, double portion);
+    double getcaloriesPerServingTotal(String input,double portion);
 }

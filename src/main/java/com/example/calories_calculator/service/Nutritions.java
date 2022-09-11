@@ -13,7 +13,7 @@ public class Nutritions implements NutritionsInterface {
 
 
     private final String url = "https://api.calorieninjas.com/v1/nutrition?query=";
-
+    private double sum = 0;
 
     public ResponseEntity<Product> response(String input) {
 
@@ -39,14 +39,6 @@ public class Nutritions implements NutritionsInterface {
 
         ResponseEntity<Product> userProduct = response(input);
 
-        if (userProduct.getStatusCode() == HttpStatus.OK) {
-
-
-        } else {
-
-            System.out.println(userProduct.getStatusCode());
-        }
-
         LinkedHashMap<String, Object> result = new LinkedHashMap<>();
 
 
@@ -65,9 +57,18 @@ public class Nutritions implements NutritionsInterface {
 
     public double getcaloriesPerServing(String input, double portion) {
 
-        double caloriesPerServing = (double) getNutritions(input).get("Calories:") * (portion / 100);
+        return (double) getNutritions(input).get("Calories:") * (portion / 100);
+    }
 
-        return caloriesPerServing;
+
+    public double getcaloriesPerServingTotal(String input,double portion) {
+
+       if(response(input).getStatusCode()== HttpStatus.OK)
+        {
+            sum += (double) getNutritions(input).get("Calories:")* (portion / 100);
+        }
+
+        return sum;
     }
 
 
